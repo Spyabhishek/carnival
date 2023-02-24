@@ -8,7 +8,7 @@ exports.createUser = async (req, res) => {
     try {
         const { name, email, phone, college, activity } = req.body;
         // To check all the details
-        if (!name || !email || !phone || !college || !activity) {
+        if (!name || !email || !phone || !college) {
             throw new Error("All fields are Required");
         }
         const userExits = await User.findOne({ email });
